@@ -1,0 +1,412 @@
+
+.home{
+  margin: 0;
+}
+
+.font-body{
+  font-family: "Red Rose";
+  margin: 0;
+  overflow: hidden;
+}
+
+.divv{
+  display: inline-flex; 
+  grid-template-columns: 1fr 1fr 1fr 1fr
+}
+
+.conx-1{
+  margin-top: 100px;
+}
+
+.three-pic{
+  width: 400px;
+  margin-left: 200px;
+  margin-top: 80px;
+}
+
+.con-pic{
+  display: block;
+  align-items: right;
+  justify-content: right;
+  text-align: right;
+}
+
+.metax{
+  padding: 70px 0px 0px 70px;
+}
+
+.metax h1{
+  color: #FFFFFF;
+  font-size: 48px;
+
+}
+
+.metax p{
+  color: #FFFFFF;
+  font-size: 24px;
+  width: 400px;
+
+}
+
+.conx{
+  display: flex;
+  flex-direction: row;
+  height: 70px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  align-items: center;
+  justify-content: space-evenly;
+  background: linear-gradient(90deg, #A02279 11.45%, #A02279 11.45%);
+}
+
+.conx img{
+  width: 200px;
+  height: 40px;
+}
+
+.conxx{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.conxx img{
+  width: 250px;
+  margin-bottom: 20px;
+}
+
+.metaxx{
+  display: flex;
+  flex-direction: row;
+}
+
+
+.homex{
+  padding-left: 50px;
+}
+
+.homex p{
+  float: left;
+}
+
+.home-heading {
+  margin-right: 20px;
+}
+.home-heading-h1 {
+  font-family: "Red Rose";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 56px;
+  color: #434343;
+  margin-bottom: 30px;
+}
+
+.home-end {
+padding-top: 50px;
+height: 550px;
+background: linear-gradient(90deg, #A02279 11.45%, #A02279 11.45%);
+}
+
+
+.heading_box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  width: 100%;
+  height: 400.08px;
+  
+}
+
+.heading-text {
+  color: #a02279;
+}
+
+.homex p{
+  width: 70%;
+  height: 102px;
+  font-family: "Red Rose";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 35px;
+  color: #434343;
+  margin-bottom: 40px;
+}
+
+.search-bar {
+    display: flex;
+    width: 70%;
+  height: 54.08px;
+  margin-bottom: 20px;
+}
+
+.search-bar a{
+  font-size: 20px;
+}
+
+.search-bar  input{
+  box-sizing: border-box;
+  background: rgba(247, 247, 247, 0.1);
+  border: 1px solid #a3a3a3;
+  border-radius: 8px 0px 0px 8px;
+  width: 300px;
+  text-align: center;
+}
+
+.search-bar-a {
+  box-sizing: border-box;
+  background: linear-gradient(90deg, #A02279 11.45%, #A02279 11.46%);
+  border-radius: 0px 8px 8px 0px;
+  width: 150px;
+  padding: 15px;
+  text-decoration: none;
+  text-align: center;
+  color: white;
+  height: 100%;
+}
+
+a:hover{
+  color: black;
+}
+
+.heading-img {
+    display: flex;
+    flex-direction: column;
+}
+
+.mid-bar {
+    display: flex;
+flex-direction: row;
+justify-content: space-evenly;
+align-items: center;
+margin-top: 40px;
+width: 100%;
+height: 70px;
+background: linear-gradient(90deg, #A02279 11.45%, #A02279 11.45%);
+}
+
+
+
+.home-end-text-div h1 {
+font-family: 'Red Rose';
+font-style: normal;
+font-weight: 500;
+font-size: 48px;
+line-height: 60px;
+background: linear-gradient(124.4deg, #FFFFFF 10.8%, #FFFFFF 87.34%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+
+}
+
+.home-end-button {
+font-family: 'Red Rose';
+font-style: normal;
+border: none;
+font-weight: 400;
+font-size: 16px;
+background-color: white;
+line-height: 19px;
+text-align: center;
+text-decoration: none;
+color:#A02279;
+border-radius: 5px;
+padding: 13px 44px;
+margin-top: 20px;
+}
+
+
+@media screen and (min-width: 320px) and (max-width: 768px) {
+
+  .conx-1{
+    margin-top: 50px;
+  }
+
+
+  .home-heading-h1 {
+    font-family: "Red Rose";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 46px;
+    color: #434343;
+  }
+
+  .four-pic{
+    width: 100%;
+  }
+
+  .three-pic{
+    display: none;
+    justify-content: center;
+    width: 300px;
+    margin-left: 20px;
+  }
+
+  .conx{
+    height: 100px;
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    background: linear-gradient(90deg, #A02279 11.45%, #A02279 11.45%);
+  }
+
+  .conxx{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  .conxx img{
+    margin-bottom: 20px;
+  }
+
+  .metamask{
+    text-align: none;
+    width: 100px;
+  }
+  
+  .openbnb{
+    float: none;
+    width: 100px;
+  }
+
+  .conx img{
+    max-width: 200px;
+    width: 100px;
+    height: 25px;
+  }
+
+  .metax{
+    padding: 0 0 0 10px;
+  }
+
+  .home-end {
+    height: 400px;
+    }
+
+
+  .metax p{
+    width: 100%;
+  }
+
+
+  .search-bar a{
+    box-sizing: border-box;
+    border-radius: 0px 8px 8px 0px;
+    width: 250px;
+    padding: 15px 20px;
+    color: white;
+    height: 100%;
+  }
+
+.search-bar input{
+  width: 300px;
+  font-size: 20px;
+
+}
+
+  .search-bar{
+    width: 100%;
+    margin-bottom: 70px;
+  }
+
+  .homex{
+    padding-left: 20px;
+    width: 500px;
+  }
+
+  .homex p{
+    width: 100%;
+    font-size: 25px;
+    margin-bottom: 100px;
+  }
+  
+}
+
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+  /* Styles for Mini iPad */
+
+  .homex{
+    width: 100%;
+  }
+
+  .conxx img{
+    width: 170px;
+  }
+
+  .search-bar input{
+    width: 300px;
+  }
+
+  .search-bar a{
+    width: 150px;
+  }
+
+  
+}
+
+@media only screen and (min-device-width: 820px) and (max-device-width: 1180px) and (-webkit-min-device-pixel-ratio: 1) {
+  /* Styles for Mini iPad Air */
+
+  .homex{
+    width: 100%;
+  }
+
+  .homex p{
+    font-size: 30px;
+    width: 100%;
+  }
+
+  .search-bar{
+    width: 100%;
+    justify-content: left;
+    margin-bottom: 100px;
+  }
+
+  .search-bar input{
+    font-size: 25px;
+  }
+
+  .four-pic{
+    display: block;
+    margin: auto;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .three-pic{
+    display: none;
+  }
+
+  .metax{
+    width: 100%;
+    padding-top: 0px;
+  }
+
+  .metax p{
+    width: 100%;
+  }
+
+  .home-end{
+    height: 400px;
+  }
+}
+
+
+@media only screen and (min-device-width: 280px) and (max-device-width: 840px) and (max-device-height: 1792px) and (-webkit-device-pixel-ratio: 2.25), (min-device-width: 280px) and (max-device-width: 840px) and (max-device-height: 1792px) and (-webkit-device-pixel-ratio: 2.625) {
+  /* Styles for Samsung Fold go here */
+
+  .img1a{
+    padding: 0;
+    width: 50px;
+  }
+
+  .home-heading-h1{
+    font-size: 20px;
+  }
+}
+
