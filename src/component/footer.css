@@ -1,0 +1,99 @@
+    
+.footerxx{
+    margin: 0;
+    overflow: hidden; 
+}
+
+.container{
+    background-color: black;
+}
+
+.row{
+    margin: 0 0;
+}
+.bg-footer{
+    background: #000000;
+    color: #f7f7f7;
+}
+
+.meta-margin{
+    /* margin-left: 10px; */
+    padding-left: 70px;
+}
+
+.footer-con1{
+    width: 35%;
+}
+
+.footer-con2{
+    width: 65%;
+}
+
+
+.footer-meta{
+    /* color: #f7f7f7; */
+    width: 42px;
+    height: 40px;
+}
+
+.footer-meta1{
+    /* color: #f7f7f7; */
+    width: 120px;
+    height: 30px;
+}
+
+.fb{
+    margin-left: 35px;
+}
+
+
+@media screen and (max-width: 768px){
+
+    .meta-margin{
+        margin-left: 5px;
+    }
+
+    .footer-meta{
+        width: 200px;
+        /* height: 30px; */
+    }
+    
+    .footer-meta1{
+        width: 120px;
+        height: 30px;
+    }
+
+    /* .meta-footer1{
+        width: 50px;
+        text-align: left;
+    } */
+
+    .fb{
+        height: 15px;
+        margin-left: 15px;
+    }
+
+    .footer-con1{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    .footer-con2{
+        width: 100%;
+    }
+
+    .meta-margin{
+        /* margin-left: 10px; */
+        padding-left: 1px;
+    }
+    
+}
+
+@media only screen and (min-device-width: 820px) and (max-device-width: 1180px) and (-webkit-min-device-pixel-ratio: 1) {
+    /* Styles for Mini iPad Air */
+
+    .meta-footer1{
+        margin-left: -50px;
+    }
+
+}
