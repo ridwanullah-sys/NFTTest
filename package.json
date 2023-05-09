@@ -8,6 +8,7 @@
     "@particle-network/connect-react-ui": "^0.13.0",
     "@particle-network/provider": "^0.13.0",
     "@particle-network/solana-wallet": "^0.13.0",
+    "@solana/web3.js": "^1.75.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -54,6 +55,7 @@
     "os-browserify": "^0.3.0",
     "process": "^0.11.10",
     "react-app-rewired": "^2.2.1",
+    "source-map-loader": "^4.0.1",
     "stream-browserify": "^3.0.0",
     "stream-http": "^3.2.0",
     "url": "^0.11.0"

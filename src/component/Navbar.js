@@ -318,7 +318,7 @@ const Navbar = () => {
     }
     return (
       <div className="header-info">
-        <button loading={loginLoading} type="primary" onClick={() => connectWallet("email")}>
+        <button type="button" class="btn btn-connect" loading={loginLoading} onClick={() => connectWallet("email")}>
           Auth
         </button>
       </div>
@@ -377,6 +377,8 @@ const Navbar = () => {
                 </button>
                 <Connect /> */}
                 <ConnectButton />
+              </li>
+              <li className="nav-item px-3">
                 <ConnectButtonFC />
               </li>
             </ul>
