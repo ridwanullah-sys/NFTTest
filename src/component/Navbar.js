@@ -319,7 +319,7 @@ const Navbar = () => {
     return (
       <div className="header-info">
         <button loading={loginLoading} type="primary" onClick={() => connectWallet("email")}>
-          Social login
+          Auth
         </button>
       </div>
     );
