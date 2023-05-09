@@ -264,12 +264,6 @@ const Navbar = () => {
     return "";
   };
 
-  const openWindow = (url) => window.open(url);
-
-  const chainInfo = (key) => {
-    return ParticleChains[key];
-  };
-
   const ConnectButtonFC = () => {
     if (loginState) {
       const items = [
@@ -318,7 +312,7 @@ const Navbar = () => {
     }
     return (
       <div className="header-info">
-        <button type="button" class="btn btn-connect" loading={loginLoading} onClick={() => connectWallet("email")}>
+        <button type="button" className="btn btn-connect" loading={loginLoading} onClick={() => connectWallet("email")}>
           Auth
         </button>
       </div>
@@ -366,6 +360,12 @@ const Navbar = () => {
               <li className="nav-item px-3">
                 <Link to="/" className="nav-link text-dark">
                   Community
+                </Link>
+              </li>
+
+              <li className="nav-item px-3">
+                <Link to="/mint" className="nav-link text-dark">
+                  Mint
                 </Link>
               </li>
 

@@ -73,3 +73,5 @@ export const customStyle = {
     modalMaskBackgroundColor: "#141430b3",
   },
 };
+
+export const NFTAddress = "0x74b40D44d86D829a1c052cedF9918B62574c1535";
