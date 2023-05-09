@@ -1,13 +1,72 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import {App} from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import { App } from "./App";
+import reportWebVitals from "./reportWebVitals";
+import {
+  PlatON,
+  Optimism,
+  Moonbeam,
+  Moonriver,
+  Avalanche,
+  Polygon,
+  BSC,
+  Ethereum,
+  EthereumGoerli,
+  BSCTestnet,
+  KCCTestnet,
+} from "@particle-network/common";
+import { evmWallets } from "@particle-network/connect";
+import { ModalProvider } from "@particle-network/connect-react-ui";
+import { WalletEntryPosition } from "@particle-network/auth";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <ModalProvider
+      walletSort={["Particle Auth", "Wallet"]}
+      particleAuthSort={[
+        "email",
+        "phone",
+        "google",
+        "apple",
+        "twitter",
+        "twitch",
+        "facebook",
+        "microsoft",
+        "linkedin",
+        "github",
+        "discord",
+      ]}
+      options={{
+        projectId: process.env.REACT_APP_PROJECT_ID,
+        clientKey: process.env.REACT_APP_CLIENT_KEY,
+        appId: process.env.REACT_APP_APP_ID,
+        chains: [
+          PlatON,
+          Optimism,
+          Moonbeam,
+          Moonriver,
+          Avalanche,
+          Polygon,
+          BSC,
+          Ethereum,
+          EthereumGoerli,
+          BSCTestnet,
+          KCCTestnet,
+        ],
+        particleWalletEntry: {
+          displayWalletEntry: true,
+          defaultWalletEntryPosition: WalletEntryPosition.BR,
+          supportChains: [Ethereum, EthereumGoerli],
+        },
+        wallets: [...evmWallets({ qrcode: false })],
+      }}
+      language="en"
+      theme={"light"}
+    >
+      <App />
+    </ModalProvider>
   </React.StrictMode>
 );
 
