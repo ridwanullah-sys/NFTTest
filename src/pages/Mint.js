@@ -23,7 +23,7 @@ const Mint = () => {
   const fileRef = useRef();
   const [fileUrl, setFileUrl] = useState(null);
   const [file, setFile] = useState(null);
-  const [fileInfo, setFileInfo] = useState();
+  const [fileInfo, setFileInfo] = useState(null);
   const [loading, setLoading] = useState(false);
   const [tokenId, setTokenId] = useState(null);
   const [tokenUri, setTokenUri] = useState(null);
@@ -42,7 +42,7 @@ const Mint = () => {
     }),
     onSubmit: async (values, helpers) => {
       try {
-        await mintNFT();
+        mintNFT();
       } catch (err) {
         helpers.setStatus({ success: false });
         helpers.setErrors({ submit: err.message });
@@ -103,6 +103,10 @@ const Mint = () => {
   const mintNFT = async () => {
     let path;
     try {
+      if (!fileInfo) {
+        toast.error("Uplaod asset file first");
+        return;
+      }
       const object = {
         name: formik.values.name,
         price: formik.values.price,
@@ -113,7 +117,7 @@ const Mint = () => {
       path = result.path;
     } catch (e) {
       console.log(e);
-      toast.error(e.message);
+      toast.error("Uplaod asset file first");
     }
 
     const accounts = await window.web3.eth.getAccounts();
