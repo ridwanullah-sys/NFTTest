@@ -74,4 +74,4 @@ export const customStyle = {
   },
 };
 
-export const NFTAddress = "0x74b40D44d86D829a1c052cedF9918B62574c1535";
+export const NFTAddress = "0x90339ccA04A8532Bb76358d8CFFDEfEBD1938377";
