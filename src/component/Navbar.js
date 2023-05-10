@@ -7,7 +7,6 @@ import "@particle-network/connect-react-ui/dist/index.css";
 import { isNullish, SettingOption, toBase58Address } from "@particle-network/auth";
 import { ParticleNetwork, WalletCustomStyle, WalletEntryPosition } from "@particle-network/auth";
 import { ParticleChains } from "@particle-network/common";
-import { AuthType, AuthTypes } from "@particle-network/auth";
 import { ParticleProvider } from "@particle-network/provider";
 import { SolanaWallet } from "@particle-network/solana-wallet";
 import Web3 from "web3";
@@ -345,27 +344,16 @@ const Navbar = () => {
                   Home
                 </Link>
               </li>
-              <li className="nav-item px-3">
-                <Link to="/" className="nav-link fs-font text-dark">
-                  Place to stay
-                </Link>
-              </li>
 
               <li className="nav-item px-3 signup2">
                 <a href="/nft" className="nav-link fs-font text-dark">
-                  NFTs
+                  My NFT dashboard
                 </a>
               </li>
 
               <li className="nav-item px-3">
-                <Link to="/" className="nav-link text-dark">
-                  Community
-                </Link>
-              </li>
-
-              <li className="nav-item px-3">
                 <Link to="/mint" className="nav-link text-dark">
-                  Mint
+                  Create NFT
                 </Link>
               </li>
 
