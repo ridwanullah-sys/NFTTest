@@ -4,14 +4,16 @@ import { Link } from "react-router-dom";
 import meta from "../Assets/images/meta-nav.png";
 import { ConnectButton } from "@particle-network/connect-react-ui";
 import "@particle-network/connect-react-ui/dist/index.css";
-import { isNullish, SettingOption, toBase58Address } from "@particle-network/auth";
-import { ParticleNetwork, WalletCustomStyle, WalletEntryPosition } from "@particle-network/auth";
+import { isNullish, toBase58Address } from "@particle-network/auth";
+import { ParticleNetwork, WalletEntryPosition } from "@particle-network/auth";
 import { ParticleChains } from "@particle-network/common";
 import { ParticleProvider } from "@particle-network/provider";
 import { SolanaWallet } from "@particle-network/solana-wallet";
 import Web3 from "web3";
+import { Button, Menu, MenuItem } from "@mui/material";
 import { fromSunFormat } from "../utils/number";
 import { customStyle as defCustomStyle } from "../config";
+import { toast } from "react-toastify";
 
 const Navbar = () => {
   const [loginLoading, setLoginLoading] = useState(false);
@@ -20,6 +22,7 @@ const Navbar = () => {
   const [balance, setBalance] = useState(0);
   const [address, setAddress] = useState("");
   const [loginAccount, setLoginAccount] = useState();
+
   const loadChainKey = () => {
     const key = localStorage.getItem("dapp_particle_chain_key");
     if (key && ParticleChains[key]) {
@@ -74,7 +77,7 @@ const Navbar = () => {
       window.particle.auth.off("disconnect", disconnect);
       window.particle.walletEntryDestroy();
     }
-    const chainKey = localStorage.getItem("dapp_particle_chain_key") || "Ethereum";
+    const chainKey = localStorage.getItem("dapp_particle_chain_key") || "BSCTestnet";
     const chain = ParticleChains[chainKey];
     const particle = new ParticleNetwork({
       projectId: process.env.REACT_APP_PROJECT_ID,
@@ -264,47 +267,69 @@ const Navbar = () => {
   };
 
   const ConnectButtonFC = () => {
-    if (loginState) {
-      const items = [
-        {
-          key: "1",
-          label: (
-            <div
-              style={{
-                height: "40px",
-                lineHeight: "40px",
-              }}
-              onClick={() => {
-                navigator.clipboard.writeText(address);
-                console.log("Copied to clipboard");
-              }}
-            >
-              Copy Address
-            </div>
-          ),
-        },
-        {
-          key: "2",
-          label: (
-            <div
-              style={{
-                color: "#ff4d4f",
-                fontWeight: "bold",
-                height: "40px",
-                lineHeight: "40px",
-              }}
-              onClick={logout}
-            >
-              Disconnect
-            </div>
-          ),
-        },
-      ];
+    const [anchorEl, setAnchorEl] = useState(null);
+    const open = Boolean(anchorEl);
 
+    if (loginState) {
       return (
         <div className="header-info">
           <div className="address-info">
-            <span>{getAddr()}</span>
+            <Button
+              id="address-button"
+              aria-controls={open ? "address-menu" : undefined}
+              aria-haspopup="true"
+              aria-expanded={open ? "true" : undefined}
+              onClick={(event) => setAnchorEl(event.currentTarget)}
+            >
+              <span>{getAddr()}</span>
+            </Button>
+            <Menu
+              id="address-menu"
+              anchorEl={anchorEl}
+              open={open}
+              onClose={() => setAnchorEl(null)}
+              MenuListProps={{
+                "aria-labelledby": "address-button",
+              }}
+              anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+              transformOrigin={{ vertical: "top", horizontal: "center" }}
+              PaperProps={{
+                elevation: 0,
+                sx: {
+                  overflow: "visible",
+                  filter: "drop-shadow(0px 2px 8px rgba(0,0,0,0.32))",
+                  mt: 1.5,
+                  "& .MuiAvatar-root": {
+                    width: 32,
+                    height: 32,
+                    ml: -0.5,
+                    mr: 1,
+                  },
+                  "&:before": {
+                    content: '""',
+                    display: "block",
+                    position: "absolute",
+                    top: 0,
+                    right: 14,
+                    width: 10,
+                    height: 10,
+                    bgcolor: "background.paper",
+                    transform: "translateY(-50%) rotate(45deg)",
+                    zIndex: 0,
+                  },
+                },
+              }}
+            >
+              <MenuItem
+                onClick={() => {
+                  navigator.clipboard.writeText(address);
+                  toast.success("Copied to clipboard");
+                }}
+              >
+                Copy Address
+              </MenuItem>
+              <MenuItem onClick={logout}>Disconnect</MenuItem>
+            </Menu>
           </div>
         </div>
       );
