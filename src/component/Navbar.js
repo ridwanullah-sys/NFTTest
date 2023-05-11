@@ -13,6 +13,7 @@ import Web3 from "web3";
 import { Button, Menu, MenuItem } from "@mui/material";
 import { fromSunFormat } from "../utils/number";
 import { customStyle as defCustomStyle } from "../config";
+import { toast } from "react-toastify";
 
 const Navbar = () => {
   const [loginLoading, setLoginLoading] = useState(false);
@@ -322,7 +323,7 @@ const Navbar = () => {
               <MenuItem
                 onClick={() => {
                   navigator.clipboard.writeText(address);
-                  console.log("Copied to clipboard");
+                  toast.success("Copied to clipboard");
                 }}
               >
                 Copy Address
