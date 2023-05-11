@@ -40,9 +40,10 @@ const Mint = () => {
       price: Yup.number().required("Asset price is required"),
       description: Yup.string().max(255).required("Description is required"),
     }),
-    onSubmit: async (values, helpers) => {
+    onSubmit: async (values, helpers, { resetForm }) => {
       try {
-        mintNFT();
+        await mintNFT();
+        resetForm();
       } catch (err) {
         helpers.setStatus({ success: false });
         helpers.setErrors({ submit: err.message });
@@ -143,7 +144,7 @@ const Mint = () => {
       methodCall.call(this, accounts[0], path).send(
         {
           from: accounts[0],
-          gas: 23000,
+          gas: 300000,
         },
         (error, hash) => {
           if (error) {
