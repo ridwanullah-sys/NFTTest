@@ -1,0 +1,8 @@
+{
+  "name": "My Test NFT",
+  "description": "Test NEft",
+  "image": "https://ipfs.io/ipfs/QmV9Nw8ENB3zBmTtw1eGBHEjNkydYUvcME11NSmRVhqGo7/frame%201.png",
+  "website_url": "",
+  "creator_fee_basis_points": 100,
+  "creator_fee_recipient": "0x4639155fb94e983a13f76be68845012f7eDCA46f"
+}

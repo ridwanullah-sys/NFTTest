@@ -62,8 +62,8 @@ root.render(
         },
         wallets: [...evmWallets({ qrcode: false })],
       }}
-      language="en"
-      theme={"light"}
+      theme={"auto"}
+      language={"en"}
     >
       <App />
     </ModalProvider>

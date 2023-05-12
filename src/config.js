@@ -1,4 +1,9 @@
-import { Ethereum, EthereumGoerli, BSC, BSCTestnet } from "@particle-network/common";
+import {
+  Ethereum,
+  EthereumGoerli,
+  BSC,
+  BSCTestnet,
+} from "@particle-network/common";
 
 export const customStyle = {
   supportAddToken: true, // whether to show import token，default true
@@ -74,4 +79,4 @@ export const customStyle = {
   },
 };
 
-export const NFTAddress = "0x90339ccA04A8532Bb76358d8CFFDEfEBD1938377";
+export const NFTAddress = "0x273e46ef84316e50371E14C055A3F9C521e4DfBB";

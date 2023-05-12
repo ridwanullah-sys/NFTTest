@@ -35,12 +35,21 @@ const Navbar = () => {
     loginAccount: "",
     chainKey: loadChainKey(),
     language: localStorage.getItem("dapp_particle_language") || "en",
-    loginFormMode: !!localStorage.getItem("dapp_particle_form_mode") ? "true" : "false",
-    promptMasterPasswordSettingWhenLogin: Number(localStorage.getItem("promptMasterPasswordSettingWhenLogin") || "2"),
-    promptSettingWhenSign: Number(localStorage.getItem("promptSettingWhenSign") || "1"),
+    loginFormMode: !!localStorage.getItem("dapp_particle_form_mode")
+      ? "true"
+      : "false",
+    promptMasterPasswordSettingWhenLogin: Number(
+      localStorage.getItem("promptMasterPasswordSettingWhenLogin") || "2"
+    ),
+    promptSettingWhenSign: Number(
+      localStorage.getItem("promptSettingWhenSign") || "1"
+    ),
     theme: localStorage.getItem("dapp_particle_theme") || "light",
-    customStyle: localStorage.getItem("customStyle") || JSON.stringify(defCustomStyle),
-    modalBorderRadius: Number(localStorage.getItem("dapp_particle_modal_border_radius") || 10),
+    customStyle:
+      localStorage.getItem("customStyle") || JSON.stringify(defCustomStyle),
+    modalBorderRadius: Number(
+      localStorage.getItem("dapp_particle_modal_border_radius") || 10
+    ),
     walletEntrance:
       localStorage.getItem("dapp_particle_walletentrance") === "true" ||
       isNullish(localStorage.getItem("dapp_particle_walletentrance")),
@@ -77,7 +86,8 @@ const Navbar = () => {
       window.particle.auth.off("disconnect", disconnect);
       window.particle.walletEntryDestroy();
     }
-    const chainKey = localStorage.getItem("dapp_particle_chain_key") || "BSCTestnet";
+    const chainKey =
+      localStorage.getItem("dapp_particle_chain_key") || "BSCTestnet";
     const chain = ParticleChains[chainKey];
     const particle = new ParticleNetwork({
       projectId: process.env.REACT_APP_PROJECT_ID,
@@ -87,7 +97,8 @@ const Navbar = () => {
       chainId: chain?.id,
       securityAccount: {
         promptSettingWhenSign: promptSettingWhenSign,
-        promptMasterPasswordSettingWhenLogin: promptMasterPasswordSettingWhenLogin,
+        promptMasterPasswordSettingWhenLogin:
+          promptMasterPasswordSettingWhenLogin,
       },
       wallet: {
         displayWalletEntry: walletEntrance,
@@ -138,9 +149,11 @@ const Navbar = () => {
     try {
       if (particle && loginState && updateHasPassword) {
         // @ts-ignore
-        const has_set_payment_password = particle.auth.userInfo().security_account?.has_set_payment_password;
+        const has_set_payment_password =
+          particle.auth.userInfo().security_account?.has_set_payment_password;
         // @ts-ignore
-        const has_set_master_password = particle.auth.userInfo().security_account?.has_set_master_password;
+        const has_set_master_password =
+          particle.auth.userInfo().security_account?.has_set_master_password;
 
         return has_set_payment_password && has_set_master_password;
       }
@@ -153,7 +166,9 @@ const Navbar = () => {
     return particle && particle?.auth?.chain()?.name?.toLowerCase() === "tron";
   };
   const isSolana = () => {
-    return particle && particle?.auth?.chain()?.name?.toLowerCase() === "solana";
+    return (
+      particle && particle?.auth?.chain()?.name?.toLowerCase() === "solana"
+    );
   };
 
   const solanaWallet = useMemo(() => {
@@ -190,10 +205,16 @@ const Navbar = () => {
     if (type === "email") {
       const regularExpression =
         /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-      input_content = loginAccount && regularExpression.test(loginAccount.toLowerCase()) ? loginAccount : undefined;
+      input_content =
+        loginAccount && regularExpression.test(loginAccount.toLowerCase())
+          ? loginAccount
+          : undefined;
     } else if (type === "phone") {
       const regularExpression = /^\+?\d{8,14}$/;
-      input_content = loginAccount && regularExpression.test(loginAccount.toLowerCase()) ? loginAccount : undefined;
+      input_content =
+        loginAccount && regularExpression.test(loginAccount.toLowerCase())
+          ? loginAccount
+          : undefined;
     } else if (type === "jwt") {
       input_content = loginAccount ? loginAccount.trim() : undefined;
       if (!input_content) {
@@ -203,7 +224,9 @@ const Navbar = () => {
         console.log("custom loading...");
       }
     }
+    console.log(input_content);
     setLoginLoading(true);
+
     particle.auth
       .login({
         preferredAuthType: type,
@@ -214,6 +237,7 @@ const Navbar = () => {
         hideLoading: type === "jwt",
       })
       .then((userInfo) => {
+        console.log(userInfo);
         window.localStorage.setItem("isPersonalSign", "0");
         setLoginState(true);
         setLoginLoading(false);
@@ -240,7 +264,11 @@ const Navbar = () => {
     }
     const accounts = await window.web3.eth.getAccounts();
     window.web3.eth.getBalance(accounts[0]).then((value) => {
-      setBalance(isTron() ? fromSunFormat(value) : window.web3.utils.fromWei(value, "ether"));
+      setBalance(
+        isTron()
+          ? fromSunFormat(value)
+          : window.web3.utils.fromWei(value, "ether")
+      );
     });
   };
 
@@ -261,7 +289,11 @@ const Navbar = () => {
   };
   const getAddr = () => {
     if (address) {
-      return address.substring(0, 5) + "..." + address.substring(address.length - 5, address.length);
+      return (
+        address.substring(0, 5) +
+        "..." +
+        address.substring(address.length - 5, address.length)
+      );
     }
     return "";
   };
@@ -336,7 +368,12 @@ const Navbar = () => {
     }
     return (
       <div className="header-info">
-        <button type="button" className="btn btn-connect" loading={loginLoading} onClick={() => connectWallet("email")}>
+        <button
+          type="button"
+          className="btn btn-connect"
+          loading={loginLoading}
+          onClick={() => connectWallet("email")}
+        >
           Auth
         </button>
       </div>
@@ -365,7 +402,11 @@ const Navbar = () => {
           <div className="collapse navbar-collapse nav-float" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item px-3">
-                <Link to="/" className="nav-link active text-dark fs-font" aria-current="page">
+                <Link
+                  to="/"
+                  className="nav-link active text-dark fs-font"
+                  aria-current="page"
+                >
                   Home
                 </Link>
               </li>

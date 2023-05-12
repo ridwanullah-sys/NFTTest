@@ -1,19 +1,53 @@
 import "../Assets/style/NFT.css";
 import Footer from "../component/Footer";
 import Navbar from "../component/Navbar";
+import { NFTAddress } from "../config";
+import nft_abi from "../MyTestNFT.json";
 
 // nft images
 
-import frame1 from "../Assets/images/frame 1.png";
-import frame2 from "../Assets/images/frame 2.png";
-import frame3 from "../Assets/images/frame 3.png";
-import frame4 from "../Assets/images/frame 4.png";
-import frame5 from "../Assets/images/frame 5.png";
-import frame6 from "../Assets/images/frame 6.png";
-import frame7 from "../Assets/images/frame 7.png";
-import frame8 from "../Assets/images/frame 7.png";
+import { useEffect, useState } from "react";
+import { ethers } from "ethers";
+import { toast } from "react-toastify";
 
 const NFT = () => {
+  const [images, setImages] = useState([]);
+  const [loading, setIsLoading] = useState();
+  const callTest = async () => {
+    setIsLoading(true);
+    try {
+      const array = [];
+      const provider = new ethers.providers.Web3Provider(window.ethereum);
+      const contract = new ethers.Contract(NFTAddress, nft_abi.abi, provider);
+      const numberOfNftMinted = await contract.numberOfNftMinted();
+
+      if (numberOfNftMinted < 1) {
+        setImages([]);
+      } else {
+        const promise = new Promise(async (resolve, reject) => {
+          for (let index = 0; index < numberOfNftMinted; index++) {
+            const urI = await contract.tokenURI(index);
+            const response = await fetch(urI);
+            const tokenInfo = await response.json();
+            array.push(tokenInfo.file);
+            if (index == numberOfNftMinted - 1) {
+              resolve(index);
+            }
+          }
+        });
+        await promise;
+        setImages(array);
+      }
+    } catch (e) {
+      toast.error(e.message);
+    }
+    setIsLoading(false);
+  };
+
+  useEffect(() => {
+    callTest();
+  }, []);
+
   return (
     <div classname="container-fluid">
       <Navbar />
@@ -31,46 +65,21 @@ const NFT = () => {
           Location <img src="../images/btn.png" alt="setting" />
         </button>
       </div>
-      <div className="conx2">
-        <img className="mbx" src={frame1} alt="frame1" />
-
-        <img className="mbx" src={frame2} alt="frame1" />
-
-        <img className="mbx" src={frame3} alt="frame1" />
-
-        <img className="mbx" src={frame4} alt="frame1" />
+      <div className="NFTList">
+        {loading ? (
+          <div>Loading</div>
+        ) : images.length > 0 ? (
+          images.map((image) => {
+            return (
+              <div className="conx2">
+                <img className="mbx" src={image} alt="frame1" />
+              </div>
+            );
+          })
+        ) : (
+          <div>No NFT minted</div>
+        )}
       </div>
-
-      <div className="conx2">
-        <img className="mbx" src={frame5} alt="frame1" />
-
-        <img className="mbx" src={frame6} alt="frame1" />
-
-        <img className="mbx" src={frame7} alt="frame1" />
-
-        <img className="mbx" src={frame8} alt="frame1" />
-      </div>
-
-      <div className="conx2">
-        <img className="mbx" src={frame1} alt="frame1" />
-
-        <img className="mbx" src={frame2} alt="frame1" />
-
-        <img className="mbx" src={frame3} alt="frame1" />
-
-        <img className="mbx" src={frame4} alt="frame1" />
-      </div>
-
-      <div className="conx2 mbxx1">
-        <img className="mbx" src={frame5} alt="frame1" />
-
-        <img className="mbx" src={frame6} alt="frame1" />
-
-        <img className="mbx" src={frame7} alt="frame1" />
-
-        <img className="mbx" src={frame8} alt="frame1" />
-      </div>
-
       <Footer />
     </div>
   );

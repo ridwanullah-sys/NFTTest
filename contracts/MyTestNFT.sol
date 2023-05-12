@@ -12,12 +12,18 @@ contract MyTestNFT is ERC721URIStorage {
 
     constructor() ERC721("My Test NFT", "MTN") {}
 
-    function safeMint(address to, string memory tokenURI) public returns (uint) {
+    function safeMint(
+        address to,
+        string memory tokenURI
+    ) public returns (uint) {
         uint256 tokenId = _tokenIdCounter.current();
         _tokenIdCounter.increment();
         _safeMint(to, tokenId);
-
         _setTokenURI(tokenId, tokenURI);
         return tokenId;
+    }
+
+    function numberOfNftMinted() public view returns (uint256) {
+        return _tokenIdCounter.current();
     }
 }

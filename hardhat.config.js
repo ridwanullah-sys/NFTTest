@@ -18,6 +18,9 @@ module.exports = {
     },
   },
   networks: {
+    localhost: {
+      chainId: 31337,
+    },
     mainnet: {
       url: `https://bsc-dataseed1.binance.org/rpc`,
       accounts: [PRIVATE_KEY],
