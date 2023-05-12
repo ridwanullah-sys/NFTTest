@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/NFTTest/static/css/main.b794b5e8.css",
-    "main.js": "/NFTTest/static/js/main.506c7fa7.js",
+    "main.js": "/NFTTest/static/js/main.3d5375e4.js",
     "static/js/16.938e4712.chunk.js": "/NFTTest/static/js/16.938e4712.chunk.js",
     "static/js/563.0ad5cf68.chunk.js": "/NFTTest/static/js/563.0ad5cf68.chunk.js",
     "static/js/915.addc66b6.chunk.js": "/NFTTest/static/js/915.addc66b6.chunk.js",
@@ -29,13 +29,13 @@
     "static/media/Alliance-No-1-Medium-3ITNO56N.woff2": "/NFTTest/static/media/Alliance-No-1-Medium-3ITNO56N.9648c3712860bee53dc0.woff2",
     "index.html": "/NFTTest/index.html",
     "main.b794b5e8.css.map": "/NFTTest/static/css/main.b794b5e8.css.map",
-    "main.506c7fa7.js.map": "/NFTTest/static/js/main.506c7fa7.js.map",
+    "main.3d5375e4.js.map": "/NFTTest/static/js/main.3d5375e4.js.map",
     "16.938e4712.chunk.js.map": "/NFTTest/static/js/16.938e4712.chunk.js.map",
     "915.addc66b6.chunk.js.map": "/NFTTest/static/js/915.addc66b6.chunk.js.map",
     "445.90ea8e2d.chunk.js.map": "/NFTTest/static/js/445.90ea8e2d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b794b5e8.css",
-    "static/js/main.506c7fa7.js"
+    "static/js/main.3d5375e4.js"
   ]
 }
