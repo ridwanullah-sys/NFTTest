@@ -17,7 +17,9 @@ const NFT = () => {
     setIsLoading(true);
     try {
       const array = [];
-      const provider = new ethers.providers.Web3Provider(window.ethereum);
+      const provider = new ethers.providers.JsonRpcProvider(
+        process.env.REACT_APP_ALCHEMY_RPC_URL
+      );
       const contract = new ethers.Contract(NFTAddress, nft_abi.abi, provider);
       const numberOfNftMinted = await contract.numberOfNftMinted();
 
