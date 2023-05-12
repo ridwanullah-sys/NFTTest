@@ -14,9 +14,9 @@ export const App = () => {
       <CssBaseline />
       <Router>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/nft" element={<NFT />} />
-          <Route path="/mint" element={<Mint />} />
+          <Route path="/NFTTest" element={<Home />} />
+          <Route path="/NFTTest/nft" element={<NFT />} />
+          <Route path="/NFTTest/mint" element={<Mint />} />
         </Routes>
       </Router>
       <ToastContainer />
