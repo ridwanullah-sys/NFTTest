@@ -1,0 +1,41 @@
+{
+  "files": {
+    "main.css": "/NFTTest/static/css/main.b794b5e8.css",
+    "main.js": "/NFTTest/static/js/main.506c7fa7.js",
+    "static/js/16.938e4712.chunk.js": "/NFTTest/static/js/16.938e4712.chunk.js",
+    "static/js/563.0ad5cf68.chunk.js": "/NFTTest/static/js/563.0ad5cf68.chunk.js",
+    "static/js/915.addc66b6.chunk.js": "/NFTTest/static/js/915.addc66b6.chunk.js",
+    "static/js/445.90ea8e2d.chunk.js": "/NFTTest/static/js/445.90ea8e2d.chunk.js",
+    "static/media/three-pic.png": "/NFTTest/static/media/three-pic.470fe9d80ca11fd5e9ed.png",
+    "static/media/four-pic.png": "/NFTTest/static/media/four-pic.d5c7398ee115507241ab.png",
+    "static/media/Alliance-No-2-ExtraBold-VY6OMXVX.ttf": "/NFTTest/static/media/Alliance-No-2-ExtraBold-VY6OMXVX.c3386cb3faa54bfbcbff.ttf",
+    "static/media/Alliance-No-2-Bold-RX4FAILL.ttf": "/NFTTest/static/media/Alliance-No-2-Bold-RX4FAILL.bb271a99110e39838dc1.ttf",
+    "static/media/Alliance-No-1-Bold-ABEQRDSS.ttf": "/NFTTest/static/media/Alliance-No-1-Bold-ABEQRDSS.0d47bce0cfcc3ce98ec5.ttf",
+    "static/media/Alliance-No-1-SemiBold-2D6PRMDQ.ttf": "/NFTTest/static/media/Alliance-No-1-SemiBold-2D6PRMDQ.e30a80c3fef0330cd075.ttf",
+    "static/media/Alliance-No-1-Regular-LGX6HLOQ.ttf": "/NFTTest/static/media/Alliance-No-1-Regular-LGX6HLOQ.4b7a914cbace85c0370e.ttf",
+    "static/media/Alliance-No-1-Medium-TISC4WT5.ttf": "/NFTTest/static/media/Alliance-No-1-Medium-TISC4WT5.a801ff78818bdccf6c36.ttf",
+    "static/media/frame 6.png": "/NFTTest/static/media/frame 6.eeb2f01ec5826a283b4b.png",
+    "static/media/frame 3.png": "/NFTTest/static/media/frame 3.249178a467ca0f621d68.png",
+    "static/media/frame 4.png": "/NFTTest/static/media/frame 4.22270eee50cabea55233.png",
+    "static/media/frame 2.png": "/NFTTest/static/media/frame 2.5df167efa8a3c047b3f9.png",
+    "static/media/frame 5.png": "/NFTTest/static/media/frame 5.bfd7ada1e78af90dedbd.png",
+    "static/media/frame 7.png": "/NFTTest/static/media/frame 7.3611d6532f60d203bbc4.png",
+    "static/media/frame 1.png": "/NFTTest/static/media/frame 1.8794ca861ec3913e0a71.png",
+    "static/media/Alliance-No-2-ExtraBold-XGXNYWG2.woff2": "/NFTTest/static/media/Alliance-No-2-ExtraBold-XGXNYWG2.d8283942e6bb00eeb56c.woff2",
+    "static/media/Alliance-No-2-Bold-JEEK6NA5.woff2": "/NFTTest/static/media/Alliance-No-2-Bold-JEEK6NA5.f48df80bece7687592a9.woff2",
+    "static/media/Alliance-No-1-Bold-H6IRQAM5.woff2": "/NFTTest/static/media/Alliance-No-1-Bold-H6IRQAM5.eec9aa1e95c90c631345.woff2",
+    "static/media/Alliance-No-1-SemiBold-2WWQPZHS.woff2": "/NFTTest/static/media/Alliance-No-1-SemiBold-2WWQPZHS.160762ff8241faf1079d.woff2",
+    "static/media/Alliance-No-1-Regular-WZT7KIBP.woff2": "/NFTTest/static/media/Alliance-No-1-Regular-WZT7KIBP.28be9dd099f83f772537.woff2",
+    "static/media/Alliance-No-1-Medium-3ITNO56N.woff2": "/NFTTest/static/media/Alliance-No-1-Medium-3ITNO56N.9648c3712860bee53dc0.woff2",
+    "index.html": "/NFTTest/index.html",
+    "main.b794b5e8.css.map": "/NFTTest/static/css/main.b794b5e8.css.map",
+    "main.506c7fa7.js.map": "/NFTTest/static/js/main.506c7fa7.js.map",
+    "16.938e4712.chunk.js.map": "/NFTTest/static/js/16.938e4712.chunk.js.map",
+    "915.addc66b6.chunk.js.map": "/NFTTest/static/js/915.addc66b6.chunk.js.map",
+    "445.90ea8e2d.chunk.js.map": "/NFTTest/static/js/445.90ea8e2d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b794b5e8.css",
+    "static/js/main.506c7fa7.js"
+  ]
+}

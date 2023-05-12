@@ -1,0 +1,1 @@
+(self.webpackChunkmeta_bnb=self.webpackChunkmeta_bnb||[]).push([[563],{6563:function(){}}]);
